@@ -1,0 +1,28 @@
+title Practice 0.4
+
+note over Browser:
+form submission
+end note
+
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_noter
+Server-->Browser: 302 - URL Redirect
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+Server-->Browser: HTML-code
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+Server-->Browser: main.js
+
+note over Browser:
+run javascript to obtain JSON data
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser: [{"content":"dfdsfsd","date":"2022-03-09T15:23:58.171Z"},...]
+
+note over Browser:
+run javascript to append the submitted element in the POST
+end note
+
+Browser-->Server: HTTP GET https://studies.cs.helsinki.fi/favicon.ico
+Server-->Browser: favicon.ico
